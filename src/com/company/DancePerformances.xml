@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DancePerformances>
+    <DancePerformance number="3">
+        <type>POP</type>
+        <scene>OUTDOOR</scene>
+        <numberOfDancers>SOLO</numberOfDancers>
+        <music>LIVE</music>
+        <dancers>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <singleDancer id="ID-1">
+                <age>12</age>
+                <name>Михалыч</name>
+                <yearsOfExperience>10</yearsOfExperience>
+            </singleDancer>
+            <danceTeam id="ID-2">
+                <yearOfCreation>1990</yearOfCreation>
+                <name>Antoshka's</name>
+                <bossName>Антошка</bossName>
+            </danceTeam>
+        </dancers>
+    </DancePerformance>
+</DancePerformances>
