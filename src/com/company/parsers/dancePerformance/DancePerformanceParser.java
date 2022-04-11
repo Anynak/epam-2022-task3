@@ -6,7 +6,7 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class DancePerformanceParser implements Parse<DancePerformance> {
+public class DancePerformanceParser implements Parser<DancePerformance> {
     private Node dancePerformanceNode;
 
     @Override
@@ -45,10 +45,8 @@ public class DancePerformanceParser implements Parse<DancePerformance> {
                     break;
                 }
                 case "dancers": {
-                    Parser<Dancer> parser = new Parser<>();
-                    parser.setNode(n);
-                    parser.setParser(new DancerParser());
-                    dancePerformance.setDancers(parser.parseList());
+                    ListParser<Dancer> parser = new ListParser<>(new DancerParser());
+                    dancePerformance.setDancers(parser.parseList(n.getChildNodes()));
                     break;
                 }
                 default:

@@ -22,11 +22,31 @@ public class SingleDancer extends Dancer {
 
     @Override
     public String toString() {
-        return "SingleDancer{" +
+        return "\n"+"SingleDancer{" +
                 "id=" + super.getId() +
                 ", name=" + super.getName() +
                 ", age=" + getAge() +
                 ", yearsOfExperience=" + getYearsOfExperience() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        SingleDancer that = (SingleDancer) o;
+
+        if (age != that.age) return false;
+        return yearsOfExperience == that.yearsOfExperience;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + age;
+        result = 31 * result + yearsOfExperience;
+        return result;
     }
 }

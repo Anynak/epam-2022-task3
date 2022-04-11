@@ -1,13 +1,14 @@
 package com.company;
 
 import com.company.model.dancePerformance.DancePerformance;
+import com.company.model.dancePerformance.comparators.DancePerformanceComparator;
+import com.company.parsers.dancePerformance.ListParser;
+import com.company.parsers.dancePerformance.Parser;
 import org.w3c.dom.Node;
 import com.company.parsers.dancePerformance.DancePerformanceParser;
-import com.company.parsers.dancePerformance.Parser;
 
 import java.util.ArrayList;
 
-//https://www.youtube.com/watch?v=ONfqhT_oua4
 public class Main {
 
     public static void main(String[] args) {
@@ -19,14 +20,15 @@ public class Main {
             return;
         }
 
-        Node rootNode = xmlValidator.getDocument();
+        Node rootNode = xmlValidator.getDocument().getFirstChild();
         if (rootNode.getNodeName().equals("DancePerformances")) {
-            Parser<DancePerformance> parser = new Parser<>();
-            parser.setNode(rootNode);
-            parser.setParser(new DancePerformanceParser());
-            ArrayList<DancePerformance> perfList = parser.parseList();
+            Parser<DancePerformance> parser = new DancePerformanceParser();
+            ListParser<DancePerformance> listParser = new ListParser<>(parser);
+            ArrayList<DancePerformance> perfList = listParser.parseList(rootNode.getChildNodes());
+            System.out.println(perfList);
+            perfList.sort(new DancePerformanceComparator());
+            System.out.println("\n");
             System.out.println(perfList);
         }
-
     }
 }

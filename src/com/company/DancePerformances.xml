@@ -6,7 +6,6 @@
         <numberOfDancers>SOLO</numberOfDancers>
         <music>LIVE</music>
         <dancers>
-            <!--You have a CHOICE of the next 2 items at this level-->
             <singleDancer id="ID-1">
                 <age>12</age>
                 <name>Михалыч</name>
@@ -17,6 +16,32 @@
                 <name>Antoshka's</name>
                 <bossName>Антошка</bossName>
             </danceTeam>
+        </dancers>
+    </DancePerformance>
+    <DancePerformance number="6">
+        <type>POP</type>
+        <scene>OUTDOOR</scene>
+        <numberOfDancers>SOLO</numberOfDancers>
+        <music>LIVE</music>
+        <dancers>
+            <singleDancer id="ID-3">
+                <age>10</age>
+                <name>Данилыч</name>
+                <yearsOfExperience>6</yearsOfExperience>
+            </singleDancer>
+        </dancers>
+    </DancePerformance>
+    <DancePerformance number="1">
+        <type>POP</type>
+        <scene>OUTDOOR</scene>
+        <numberOfDancers>SOLO</numberOfDancers>
+        <music>LIVE</music>
+        <dancers>
+            <singleDancer id="ID-44">
+                <age>32</age>
+                <name>Анастасия Александровна</name>
+                <yearsOfExperience>5</yearsOfExperience>
+            </singleDancer>
         </dancers>
     </DancePerformance>
 </DancePerformances>

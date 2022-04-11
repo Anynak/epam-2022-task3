@@ -3,8 +3,9 @@ package com.company.model.dancePerformance;
 import com.company.model.dancePerformance.dancer.Dancer;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
-public class DancePerformance{
+public class DancePerformance {
 
     private int number;
     private Type type;
@@ -14,7 +15,7 @@ public class DancePerformance{
     private ArrayList<Dancer> dancers;
 
 
-    public DancePerformance(){
+    public DancePerformance() {
 
     }
 
@@ -68,7 +69,7 @@ public class DancePerformance{
 
     @Override
     public String toString() {
-        return "DancePerformance{" +
+        return "\n" + "DancePerformance{" +
                 "number=" + getNumber() +
                 ", type=" + getType() +
                 ", scene=" + getScene() +
@@ -76,5 +77,31 @@ public class DancePerformance{
                 ", music=" + getMusic() +
                 ", dancers=" + getDancers() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        DancePerformance that = (DancePerformance) o;
+
+        if (number != that.number) return false;
+        if (type != that.type) return false;
+        if (scene != that.scene) return false;
+        if (numberOfDancers != that.numberOfDancers) return false;
+        if (music != that.music) return false;
+        return Objects.equals(dancers, that.dancers);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = number;
+        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (scene != null ? scene.hashCode() : 0);
+        result = 31 * result + (numberOfDancers != null ? numberOfDancers.hashCode() : 0);
+        result = 31 * result + (music != null ? music.hashCode() : 0);
+        result = 31 * result + (dancers != null ? dancers.hashCode() : 0);
+        return result;
     }
 }

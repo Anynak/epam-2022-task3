@@ -3,7 +3,7 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <xsd:element name="DancePerformances">
         <xsd:complexType>
-            <xsd:sequence>
+            <xsd:choice maxOccurs="unbounded">
                 <xsd:element name="DancePerformance">
                     <xsd:complexType>
                         <xsd:sequence>
@@ -16,7 +16,7 @@
                         <xsd:attribute name="number" type="xsd:int" use="required" />
                     </xsd:complexType>
                 </xsd:element>
-            </xsd:sequence>
+            </xsd:choice>
         </xsd:complexType>
     </xsd:element>
 

@@ -5,7 +5,7 @@ import com.company.model.dancePerformance.dancer.Dancer;
 import com.company.model.dancePerformance.dancer.SingleDancer;
 import org.w3c.dom.Node;
 
-public class DancerParser implements Parse<Dancer> {
+public class DancerParser implements Parser<Dancer> {
 
     private Node dancerNode;
 
